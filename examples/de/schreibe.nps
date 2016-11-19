@@ -1,0 +1,6 @@
+//----------------------------------------------------------------------------
+// NPS Write (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// Schreibe text von rechts nach links laufend in gegebener farbe
+schreibe "Hallo Welt!" in rot

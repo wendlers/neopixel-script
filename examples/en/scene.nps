@@ -1,0 +1,123 @@
+//----------------------------------------------------------------------------
+// NPS Scene (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// A scene has a unique name an is a container for other commands
+scene propeller1
+  // Every command could be used within a scene (except "scene")
+  array
+    1 0 0 0 0 0 0 0
+    0 1 0 0 0 0 0 0
+    0 0 1 0 0 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 0 0 1 0 0
+    0 0 0 0 0 0 1 0
+    0 0 0 0 0 0 0 1
+  in red
+  sleep 100 msec
+end
+
+scene propeller2
+  array
+    0 0 0 1 0 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 0 1 0 0 0
+  in red
+  sleep 100 msec
+end
+
+scene propeller3
+  array
+    0 0 0 0 0 0 0 1
+    0 0 0 0 0 0 1 0
+    0 0 0 0 0 1 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 1 0 0 0 0 0
+    0 1 0 0 0 0 0 0
+    1 0 0 0 0 0 0 0
+  in red
+  sleep 100 msec
+end
+
+scene propeller4
+  array
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    1 1 1 1 0 0 0 0
+    0 0 0 0 1 1 1 1
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  in red
+  sleep 100 msec
+end
+
+scene animated_propeller
+  // "play" calls a scene by its unique name
+  play propeller1
+  play propeller2
+  play propeller3
+  play propeller4
+end
+
+brightness 10
+play animated_propeller
+
+brightness 20
+play animated_propeller
+
+brightness 30
+play animated_propeller
+
+brightness 40
+play animated_propeller
+
+brightness 50
+play animated_propeller
+
+brightness 60
+play animated_propeller
+
+brightness 70
+play animated_propeller
+
+brightness 80
+play animated_propeller
+
+brightness 90
+play animated_propeller
+
+brightness 100
+play animated_propeller
+
+brightness 90
+play animated_propeller
+
+brightness 80
+play animated_propeller
+
+brightness 70
+play animated_propeller
+
+brightness 60
+play animated_propeller
+
+brightness 50
+play animated_propeller
+
+brightness 40
+play animated_propeller
+
+brightness 30
+play animated_propeller
+
+brightness 20
+play animated_propeller

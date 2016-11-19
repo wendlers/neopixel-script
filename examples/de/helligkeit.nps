@@ -1,0 +1,10 @@
+//----------------------------------------------------------------------------
+// NPS Helligkeit (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// Der Wertebereich ist von 0 bis 255. 0 ist aus, 255 wahnsinning hell.
+helligkeit 100
+schreibe "*** HELL ***" in blau
+
+helligkeit 5
+schreibe "*** DUNKEL ***" in blau

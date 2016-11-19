@@ -1,0 +1,11 @@
+//----------------------------------------------------------------------------
+// NPS Brightness (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// range for brightness is from 0 to 255
+// zero is dark, 255 is insane bright
+brightness 100
+write "*** BRIGHT ***" in blue
+
+brightness 5
+write "*** DARK ***" in blue

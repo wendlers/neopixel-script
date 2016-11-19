@@ -1,0 +1,123 @@
+//----------------------------------------------------------------------------
+// NPS Szene (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// Eine Szene mit eindeutigem namen
+szene propeller1
+  // Alle Befehle könne in der Szene verwendet werden (außer "szene")
+  feld
+    1 0 0 0 0 0 0 0
+    0 1 0 0 0 0 0 0
+    0 0 1 0 0 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 0 0 1 0 0
+    0 0 0 0 0 0 1 0
+    0 0 0 0 0 0 0 1
+  in rot
+  warte 100 msek
+ende
+
+szene propeller2
+  feld
+    0 0 0 1 0 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 0 1 0 0 0
+  in rot
+  warte 100 msek
+ende
+
+szene propeller3
+  feld
+    0 0 0 0 0 0 0 1
+    0 0 0 0 0 0 1 0
+    0 0 0 0 0 1 0 0
+    0 0 0 0 1 0 0 0
+    0 0 0 1 0 0 0 0
+    0 0 1 0 0 0 0 0
+    0 1 0 0 0 0 0 0
+    1 0 0 0 0 0 0 0
+  in rot
+  warte 100 msek
+ende
+
+szene propeller4
+  feld
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    1 1 1 1 0 0 0 0
+    0 0 0 0 1 1 1 1
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+    0 0 0 0 0 0 0 0
+  in rot
+  warte 100 msek
+ende
+
+szene animierter_propeller
+  // "spiele" ruft eine Szene mit ihrem Namen auf
+  spiele propeller1
+  spiele propeller2
+  spiele propeller3
+  spiele propeller4
+ende
+
+helligkeit 10
+spiele animierter_propeller
+
+helligkeit 20
+spiele animierter_propeller
+
+helligkeit 30
+spiele animierter_propeller
+
+helligkeit 40
+spiele animierter_propeller
+
+helligkeit 50
+spiele animierter_propeller
+
+helligkeit 60
+spiele animierter_propeller
+
+helligkeit 70
+spiele animierter_propeller
+
+helligkeit 80
+spiele animierter_propeller
+
+helligkeit 90
+spiele animierter_propeller
+
+helligkeit 100
+spiele animierter_propeller
+
+helligkeit 90
+spiele animierter_propeller
+
+helligkeit 80
+spiele animierter_propeller
+
+helligkeit 70
+spiele animierter_propeller
+
+helligkeit 60
+spiele animierter_propeller
+
+helligkeit 50
+spiele animierter_propeller
+
+helligkeit 40
+spiele animierter_propeller
+
+helligkeit 30
+spiele animierter_propeller
+
+helligkeit 20
+spiele animierter_propeller

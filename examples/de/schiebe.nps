@@ -1,0 +1,22 @@
+//----------------------------------------------------------------------------
+// NPS Schieben (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+wiederhole 8 mal
+
+  // "schiebt" 2 grüne Pixel von der linken Seite ein
+  schiebe 2 links in gruen
+  warte 100 msek
+  schiebe 2 links in rot
+  warte 100 msek
+  schiebe 2 links in lila
+  warte 100 msek
+  schiebe 2 links in weiss
+  warte 100 msek
+ende
+
+wiederhole 64 mal
+  // "schiebe" 1 schwarzes Pixel von der rechten Seite ein
+  schiebe 1 rechts in schwarz
+  warte 50 msek
+ende

@@ -1,0 +1,21 @@
+//----------------------------------------------------------------------------
+// NPS Shift (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+repeat 8 times
+  // "shifts" in 2 green pixels from the left side
+  shift 2 left in green
+  sleep 100 msec
+  shift 2 left in red
+  sleep 100 msec
+  shift 2 left in magenta
+  sleep 100 msec
+  shift 2 left in white
+  sleep 100 msec
+end
+
+repeat 64 times
+  // "shifts" in 1 black pixel from the right side
+  shift 1 right in black
+  sleep 50 msec
+end

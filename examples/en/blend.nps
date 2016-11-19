@@ -1,0 +1,15 @@
+//----------------------------------------------------------------------------
+// NPS Blend (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// start with zero brightness
+brightness 0
+
+// Show symbol "Invader" with given color
+symbol "\x05" in yellow
+
+// brightness from 0 to 50 (fade in the Invader)
+blend 0..50
+
+// brightness from 50 to 0 (fade out the Invader)
+blend 50..0

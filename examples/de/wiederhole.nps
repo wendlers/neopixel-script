@@ -1,0 +1,26 @@
+//----------------------------------------------------------------------------
+// NPS Wiederhole (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// Wiederholung mit Zählervariable ("$i")
+wiederhole 10 mal mit $i
+  pixel 0:$i in rot
+  pixel $i:0 in rot
+  pixel 7:$i in rot
+  pixel $i:7 in rot
+ende
+
+// Wiederholung ohne Zählervariable
+wiederhole 10 mal
+  pixel 3:3, 3:4, 4:3, 4:4 in gruen
+  warte 500 msek
+  pixel 3:3, 3:4, 4:3, 4:4 in schwarz
+  warte 500 msek
+ende
+
+wiederhole 10 mal
+  pixel 3:3, 3:4, 4:3, 4:4 in blau
+  warte 500 msek
+  pixel 3:3, 3:4, 4:3, 4:4 in schwarz
+  warte 500 msek
+ende

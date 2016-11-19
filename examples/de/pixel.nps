@@ -1,0 +1,18 @@
+//----------------------------------------------------------------------------
+// NPS Pixel (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// Alle Pixel auf eine Frabe setzen
+pixel alle in dunkelgruen
+
+// Absolute Adressierung über LED-ID
+pixel 0 in blau
+
+// Adressierung über Zeile:Spalte
+pixel 0:0 in blau
+
+// Mehre Pixel auf einmal setzen
+pixel 7:0, 63 in rot
+
+// "in" ist optional
+pixel 3:3, 3:4, 4:3, 4:4 lila

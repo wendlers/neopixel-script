@@ -1,0 +1,10 @@
+//----------------------------------------------------------------------------
+// NPS Animate (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// Show each char from the string, one after the other using the given color.
+// From 0 to 31 there are some special symbols, prefix with "\x" to use them.
+animate "9876543210" in green
+animate "\x01\x02\x03\x04\x05\x06\x07\x08\x09" in gold
+animate "\x11\x12\x14\x15\x16\x17\x18\x19\x20" in blue
+animate "\x21\x22\x23\x24\x25\x26\x27\x28\x29" in red

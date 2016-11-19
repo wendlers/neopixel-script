@@ -1,0 +1,18 @@
+//----------------------------------------------------------------------------
+// NPS Pixel (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// Set all pixel to given color
+pixel all in darkgreen
+
+// Absolute addressing with LED ID
+pixel 0 in blue
+
+// Address by column and row
+pixel 0:0 in blue
+
+// Set multiple pixels at once to the same color
+pixel 7:0, 63 in red
+
+// "in" is optional
+pixel 3:3, 3:4, 4:3, 4:4 magenta

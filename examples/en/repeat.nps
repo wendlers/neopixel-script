@@ -1,0 +1,27 @@
+//----------------------------------------------------------------------------
+// NPS Repeat (8x8 Matrix)
+//----------------------------------------------------------------------------
+
+// Repeat with named counter variable ("$i")
+repeat 10 times with $i
+  // Named counter variable could be used with pixel command ...
+  pixel 0:$i in red
+  pixel $i:0 in red
+  pixel 7:$i in red
+  pixel $i:7 in red
+end
+
+// Repeat without counter variable
+repeat 10 times
+  pixel 3:3, 3:4, 4:3, 4:4 in green
+  sleep 500 msec
+  pixel 3:3, 3:4, 4:3, 4:4 in black
+  sleep 500 msec
+end
+
+repeat 10 times
+  pixel 3:3, 3:4, 4:3, 4:4 in blue
+  sleep 500 msec
+  pixel 3:3, 3:4, 4:3, 4:4 in black
+  sleep 500 msec
+end
