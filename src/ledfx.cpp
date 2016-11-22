@@ -1,9 +1,18 @@
 #include "ledfx.h"
-#include "font.h"
+
+#ifdef FONT_HL2
+  #include "font_hl2.h"
+#else
+  #include "font_ibm.h"
+#endif
+
+#ifndef NP_DATA_PIN
+#define NP_DATA_PIN     3
+#endif
 
 LedFX::LedFX()
 {
-  FastLED.addLeds<NEOPIXEL, 3>(leds, num_leds);
+  FastLED.addLeds<NEOPIXEL, NP_DATA_PIN>(leds, num_leds);
   FastLED.setBrightness(10);
 }
 
@@ -193,11 +202,12 @@ void LedFX::show(unsigned long pause)
 uint8_t LedFX::fontCharToMatrix(char c, unsigned char matrix[num_leds],
   bool center)
 {
+  memset(matrix, 0, num_leds);
+
+#ifdef FONT_HL2
   uint8_t width = font[(unsigned char)c][0];
   uint8_t col = 1;
   uint8_t row = center ? (rows - width) / 2 : rows - width;
-
-  memset(matrix, 0, num_leds);
 
   if(c < 0 || c > 127) {
       return 0;
@@ -214,4 +224,23 @@ uint8_t LedFX::fontCharToMatrix(char c, unsigned char matrix[num_leds],
   }
 
   return width;
+#else
+  uint8_t col = 1;
+  uint8_t row = 0;
+
+  if(c > 20 && c < 128) {
+    for(uint16_t i = 0; i < num_leds; i += 8) {
+      if(i < 8 * 8) {
+        for(uint16_t j = 0; j < 8; j++) {
+          matrix[rows * j + row] = (font[(unsigned char)c][col] >> j) & 1;
+        }
+        col++;
+        row++;
+      }
+    }
+    return 8;
+  }
+
+  return 0;
+#endif
 }

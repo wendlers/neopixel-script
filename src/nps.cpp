@@ -8,24 +8,7 @@ LedFX fx = LedFX();
 
 void nps_main(void)
 {
-
-  for(int nps_i0 = 0; nps_i0 < 8; nps_i0++) {
-    fx.shiftLeft(2, CRGB::Green);
-    fx.show(100);
-    fx.shiftLeft(2, CRGB::Red);
-    fx.show(100);
-    fx.shiftLeft(2, CRGB::Purple);
-    fx.show(100);
-    fx.shiftLeft(2, CRGB::White);
-    fx.show(100);
-  }
-
-
-  for(int nps_i0 = 0; nps_i0 < 64; nps_i0++) {
-    fx.shiftRight(1, CRGB::Black);
-    fx.show(50);
-  }
-
+  fx.putString("*** Hello NeoPixel ***", CRGB::Blue);
 
   fx.show();
 }
