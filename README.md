@@ -5,11 +5,11 @@ This project tries to implement a simple DSL (domain specific language)
 which easily allows to program effects for a NeoPixel based 8x8 matrix.
 One of the main goals of this language is to be simple and easy to learn
 and understand especially for children. Thus, the language is offered in
-different languages (currently german and english). A simple script which
-will produce a colerful effect on the whole 8x8 matrix would look like
+different languages (currently German and English). A simple script which
+will produce a colorful effect on the whole 8x8 matrix would look like
 this:
 
-In german
+In German
 
     wiederhole 8 mal
       // "schiebt" 2 grüne Pixel von der linken Seite ein
@@ -23,7 +23,7 @@ In german
       warte 100 msek
     ende
 
-And in englisch
+And in English
 
     repeat 8 times
       // "shifts" in 2 green pixels from the left side
@@ -48,8 +48,8 @@ libraries (especially FastLED) into an native executable for the Arduino,
 and then uploaded.
 
 By using PlatformIO IDE, the steps described above are as easy as editing
-"effects_de.nps" if using the german implementation of NPS or "effects_en.nps"
-if using the englisch implementation. Then the only thing left to do is hit
+"effects_de.nps" if using the German implementation of NPS or "effects_en.nps"
+if using the English implementation. Then the only thing left to do is hit
 the "Upload" button on the left, and after a few seconds, the Arduino will run
 your script.
 
@@ -57,7 +57,7 @@ Usage
 -----
 
 You need PlatformIO IDE (CLI will also do but is more complex to install).
-To install PlatformIO IDE, follow the [steps described on their webside](
+To install PlatformIO IDE, follow the [steps described on their web-side](
   http://docs.platformio.org/en/stable/installation.html).
 
 Then open the IDE by starting "Atom" and choose "Open Project" and point it to
