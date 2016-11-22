@@ -52,15 +52,23 @@ Der folgende Befehl beleuchtet die LEDs 0, 1, 2, 3, 4, 5, 6, 7 in grün:
 Weiterhin gibt es die spezial Adresse "alle" die es ermöglicht, die komplette Matrix in
 einer gegeben Farbe leuchten zu lassen:
 
-    pixel all in lila
+    pixel alle in lila
 
 ### schreibe
 
-TODO
+Mit dem Befehl "schreibe" kann ein beliebiger Text in einer angegebenen Farbe von rechts
+nach links über die Matrix gerollt werden:
+
+    schreibe "NeoPixel Script ist einfach!" in gelb
+
+Wichtig dabei ist, das der Text in Anführungszeichen ("") steht.    
 
 ### symbol
 
-TODO
+Der Befehl "symbol" stellt ein einzelnes Zeichen in einer angegebenen Farbe auf der Matrix
+dar:
+
+    symbol "X" in blau
 
 ### animiere
 
@@ -72,7 +80,7 @@ TODO
 
 ### helligkeit
 
-TODO
+Der Wert für die Helligkeit muss zwischen 0 und 255 sein.
 
 ### blenden
 
