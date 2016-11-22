@@ -26,7 +26,7 @@
 *.out
 *.app
 # Misc
-src/font.h
+src/font_hl2.h
 *.pyc
 .piolibdeps
 .travis.yml
