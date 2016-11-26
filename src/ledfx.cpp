@@ -1,13 +1,9 @@
 #include "ledfx.h"
 
-#ifdef FONT_HL2
+#ifdef NP_FONT_HL2
   #include "font_hl2.h"
 #else
   #include "font_ibm.h"
-#endif
-
-#ifndef NP_DATA_PIN
-#define NP_DATA_PIN     3
 #endif
 
 LedFX::LedFX()
@@ -87,6 +83,7 @@ void LedFX::putString(const char *s, CRGB::HTMLColorCode fgColor,
 
   while(*p) {
 
+#ifdef NP_FONT_HL2
     bool center = (*p < 32);
 
     uint8_t w = fontCharToMatrix(*p++, matrix2, center);
@@ -95,6 +92,10 @@ void LedFX::putString(const char *s, CRGB::HTMLColorCode fgColor,
     if(center || start < 0) {
       start = 0;
     }
+#else
+    fontCharToMatrix(*p++, matrix2);
+    uint8_t start = 0;
+#endif
 
     for(uint8_t i = start; i < cols; i++) {
       for(uint8_t col = 0; col < cols; col++) {
@@ -204,7 +205,7 @@ uint8_t LedFX::fontCharToMatrix(char c, unsigned char matrix[num_leds],
 {
   memset(matrix, 0, num_leds);
 
-#ifdef FONT_HL2
+#ifdef NP_FONT_HL2
   uint8_t width = font[(unsigned char)c][0];
   uint8_t col = 1;
   uint8_t row = center ? (rows - width) / 2 : rows - width;
@@ -222,25 +223,16 @@ uint8_t LedFX::fontCharToMatrix(char c, unsigned char matrix[num_leds],
       row++;
     }
   }
-
   return width;
 #else
-  uint8_t col = 1;
-  uint8_t row = 0;
-
-  if(c > 20 && c < 128) {
-    for(uint16_t i = 0; i < num_leds; i += 8) {
-      if(i < 8 * 8) {
-        for(uint16_t j = 0; j < 8; j++) {
-          matrix[rows * j + row] = (font[(unsigned char)c][col] >> j) & 1;
+  if(c > 0x20 && c < 0x80) {
+    for(uint16_t row = 0; row < rows; row++) {
+        for(uint16_t col = 0; col < cols; col++) {
+            matrix[row * 8 + col] = (font[(unsigned char)c - 0x21][row] >> col) & 1;
         }
-        col++;
-        row++;
-      }
     }
     return 8;
   }
-
   return 0;
 #endif
 }

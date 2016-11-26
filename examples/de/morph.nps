@@ -1,0 +1,18 @@
+szene morph
+  warte 500 msek
+  wiederhole 16 mal
+    schiebe 4 rechts in schwarz
+    warte 50 msek
+  ende
+ende
+
+symbol "H" in rot
+spiele morph
+symbol "A" in rot
+spiele morph
+symbol "L" in rot
+spiele morph
+symbol "L" in rot
+spiele morph
+symbol "O" in rot
+spiele morph

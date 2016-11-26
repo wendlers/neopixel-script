@@ -3,11 +3,23 @@
 
 #include "FastLED.h"
 
+#ifndef NP_DATA_PIN
+#define NP_DATA_PIN     3
+#endif
+
+#ifndef NP_ROWS
+#define NP_ROWS         8
+#endif
+
+#ifndef NP_COLS
+#define NP_COLS         8
+#endif
+
 class LedFX {
 public:
 
-  static const uint8_t rows = 8;
-  static const uint8_t cols = 8;
+  static const uint8_t rows = NP_ROWS;
+  static const uint8_t cols = NP_COLS;
   static const uint16_t num_leds = rows * cols;
 
 public:

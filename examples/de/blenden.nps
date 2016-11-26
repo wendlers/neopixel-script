@@ -4,8 +4,8 @@
 
 helligkeit 0
 
-// Stelle Symbol "Invader" dar
-symbol "\x05" in gelb
+// Stelle ein "X" dar
+symbol "X" in gelb
 
 // Helligkeit von 0 bis 50 steigern (und Invader einblenden)
 blenden 0..50
