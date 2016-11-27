@@ -7,7 +7,7 @@ einer 8x8 NeoPixel LED Matrix.
 
 ### Kommentare
 
-Zeilen welche mit "//" beginnen sind Kommentarzeilen die nicht vom Kompiler ausgewertet
+Zeilen welche mit "//" beginnen sind Kommentarzeilen die nicht vom Compiler ausgewertet
 werden:
 
     // das ist ein Kommentar
@@ -16,10 +16,10 @@ werden:
 
 Der Befehl "pixel" ermöglicht das setzen ein oder mehrerer LEDs in einer angegebenen Farbe
 (siehe auch Abschnitt "Farben"). Eine LED innerhalb der Matrix kann dabei auf zwei Arten
-angesrochen (adressiert) werden (siehe auch Abschnitt "Adressierung"):
+angesprochen (adressiert) werden (siehe auch Abschnitt "Adressierung"):
 
   * Absolut: dabei wird die eindeutige Nummer der LED angegeben (z. B. 42)
-  * Relativ: hier wird die Spalte und die Zeile der LED agegeben, getrennt durch ":" (z. B. 3:4)
+  * Relativ: hier wird die Spalte und die Zeile der LED angegeben, getrennt durch ":" (z. B. 3:4)
 
 Für beide Arten der Adressierung gilt, es wird immer bei 0 begonnen.
 
@@ -28,7 +28,7 @@ mit absoluter Adressierung und folgendem Befehl tun:
 
     pixel 0 in rot
 
-Das Gleiche mit ralativer Adressierung:
+Das Gleiche mit relativer Adressierung:
 
     pixel 0:7 in rot
 
@@ -70,19 +70,19 @@ der Matrix dar:
 
     symbol "X" in blau
 
-Für den Befehl "symbol" gilt, dass innerhalbt der Anführungszeichen genau ein
+Für den Befehl "symbol" gilt, dass innerhalb der Anführungszeichen genau ein
 Zeichen stehen darf.
 
 ### animiere
 
-Mit "animiere" werden die agegebenen Zeichen nacheinander in der definierten Farbe
+Mit "animiere" werden die angegebenen Zeichen nacheinander in der definierten Farbe
 dargestellt:
 
     animiere "Hallo!" in magenta
 
 ### feld
 
-Ein "feld" enhält für jede LED genau einen Wert - 0 oder 1. 0 bedeutet LED schwarz/aus,
+Ein "feld" enthält für jede LED genau einen Wert - 0 oder 1. 0 bedeutet LED schwarz/aus,
 1 bedeutet, dass die LED in der gegebene Farbe beleuchtet wird:
 
     // ein X über die komplette Matrix
@@ -111,7 +111,7 @@ Der Wert für die Helligkeit muss zwischen 0 und 255 liegen:
 
 ### blenden
 
-Mit dem Befehl "blenden" wird die Helligkeit innerhalb des gegebenen Wertebereiches
+Mit dem Befehl "blenden" wird die Helligkeit innerhalb des gegebenen Wertebereichs
 schrittweise erhöht (Einblenden) bzw. erniedrigt (Ausblenden).
 
 Zum Einblenden wählt man den Wertebereich so, dass der Startwert kleiner als der
