@@ -191,6 +191,15 @@ void LedFX::shiftRight(uint16_t amount, CRGB::HTMLColorCode color)
   }
 }
 
+void LedFX::change(CRGB::HTMLColorCode from, CRGB::HTMLColorCode to)
+{
+  for(uint16_t i = 0; i < num_leds; i++) {
+    if(leds[i] == (CRGB)from) {
+      leds[i] = to;
+    }
+  }
+}
+
 void LedFX::show(unsigned long pause)
 {
   FastLED.show();

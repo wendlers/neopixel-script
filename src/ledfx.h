@@ -54,9 +54,9 @@ public:
     CRGB::HTMLColorCode bgColor = CRGB::Black,
     int loops = 1, unsigned long pause = 250);
 
-    void animate(unsigned char matrixList[][num_leds], uint8_t size,
-      CRGB::HTMLColorCode *colors,
-      int loops = 1, unsigned long pause = 250);
+  void animate(unsigned char matrixList[][num_leds], uint8_t size,
+    CRGB::HTMLColorCode *colors,
+    int loops = 1, unsigned long pause = 250);
 
   void blend(uint8_t from = 0, uint8_t to = 100);
 
@@ -64,6 +64,8 @@ public:
 
   void shiftRight(uint16_t amount, CRGB::HTMLColorCode color);
 
+  void change(CRGB::HTMLColorCode from, CRGB::HTMLColorCode to);
+  
   void show(unsigned long pause = 0);
 
 private:

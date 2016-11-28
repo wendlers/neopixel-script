@@ -123,6 +123,14 @@ Und zum Ausblenden wird der Endwert kleiner als der Startwert gewählt:
 
     blenden 50..0
 
+### wechsle
+
+Mit "wechsle" können LEDs die aktuell in einer gegebenen Farbe beleuchtet sind
+dazu veranlasst werden in einer anderen gegebenen Farbe zu leuchten. Mit folgendem
+Befehl schalten alle blau leuchtenden LEDs auf rot um:
+
+    wechsle blau nach rot
+
 ### warte
 
 Wertet die angegebene Zeit in Sekunden (sek) oder Millisekunden (msek):

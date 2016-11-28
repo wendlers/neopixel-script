@@ -33,6 +33,8 @@ _T = {
         "right":        "rechts",
         "in":           "in",
         "with":         "mit",
+        "change":       "wechsle",
+        "to":           "nach",
 
         # color translations
         "black":            "schwarz",
@@ -165,8 +167,8 @@ class NpScript:
 
         number = OR(Tok(self.DEC), Tok(self.HEX))
         string = Tok(self.STR)
-        color = OR(AND(Tok(self.KEY, _t('in')),
-                       Tok(self.KEY, self.color_map.keys())), Tok(self.KEY, self.color_map.keys()))
+        color_only = Tok(self.KEY, self.color_map.keys())
+        color = OR(AND(Tok(self.KEY, _t('in')), color_only), color_only)
         number_or_ref = OR(Tok(self.DEC), Tok(self.HEX), Tok(self.REF))
         ledid = OR(AND(AND(number_or_ref, Tok(self.DELIM), number_or_ref)),
                    AND(AND(number_or_ref, Tok(self.RANGE), number_or_ref)),
@@ -272,8 +274,14 @@ class NpScript:
             ), action=self._shift
         )
 
+        """
+        change <color> to <color>
+        """
+        change = AND(Tok(self.KEY, _t('change')), AND(color_only, AND(Tok(self.KEY, _t('to')), color_only)),
+                     action=self._change)
+
         commands = OR(pixel, brightness, write, wait, play, field, symbol,
-                      blend, animate, shift)
+                      blend, animate, shift, change)
 
         """
         repeat <num> times
@@ -373,7 +381,7 @@ class NpScript:
         # print("write", tokens)
 
         self.result[self.scene] += ' ' * self.indent + 'fx.putString(%s, %s);\n' % (
-        tokens[0].value, self.color_map[tokens[-1].value])
+            tokens[0].value, self.color_map[tokens[-1].value])
 
     def _wait(self, tokens):
 
@@ -490,7 +498,7 @@ class NpScript:
 
     def _shift(self, tokens):
 
-        print("shift", tokens)
+        # print("shift", tokens)
 
         if tokens[2].value == _t('left'):
             dir = "Left"
@@ -499,6 +507,13 @@ class NpScript:
 
         self.result[self.scene] += ' ' * self.indent + "fx.shift%s(%d, %s);\n" % (
             dir, tokens[1].value, self.color_map[tokens[-1].value])
+
+    def _change(self, tokens):
+
+        # print("change", tokens)
+
+        self.result[self.scene] += ' ' * self.indent + "fx.change(%s, %s);\n" % (
+            self.color_map[tokens[1].value], self.color_map[tokens[3].value])
 
     def compile(self, inp):
 
