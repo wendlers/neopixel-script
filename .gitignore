@@ -30,3 +30,4 @@ src/font_hl2.h
 *.pyc
 .piolibdeps
 .travis.yml
+test.nps
