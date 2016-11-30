@@ -5,11 +5,96 @@
 
 LedFX fx = LedFX();
 
+void nps_scene_lauflicht(void);
+void nps_scene_pulsiere(void);
+void nps_scene_alle_pulsieren(void);
+void nps_scene_wechselblink(void);
+
+void nps_scene_lauflicht(void) {
+  fx.setBrightness(50);
+  fx.setPixel(CRGB::Black);
+
+  for(int nps_i0 = 0; nps_i0 < 10; nps_i0++) {
+
+    for(int nps_i = 0; nps_i < 23; nps_i++) {
+      fx.setPixel((uint16_t)nps_i, CRGB::Red);
+      fx.show(100);
+      fx.setPixel((uint16_t)nps_i, CRGB::Black);
+    }
+
+  }
+
+}
+
+void nps_scene_pulsiere(void) {
+  fx.blend(0, 100);
+  fx.show(500);
+  fx.blend(100, 0);
+}
+
+void nps_scene_alle_pulsieren(void) {
+  fx.setBrightness(0);
+  fx.setPixel(CRGB::Black);
+
+  for(int nps_i0 = 0; nps_i0 < 1; nps_i0++) {
+    fx.setPixel(CRGB::Blue);
+    nps_scene_pulsiere();
+    fx.setPixel(CRGB::Magenta);
+    nps_scene_pulsiere();
+    fx.setPixel(CRGB::Green);
+    nps_scene_pulsiere();
+    fx.setPixel(CRGB::Red);
+    nps_scene_pulsiere();
+    fx.setPixel(CRGB::White);
+    nps_scene_pulsiere();
+  }
+
+}
+
+void nps_scene_wechselblink(void) {
+  fx.setBrightness(50);
+  fx.setPixel(CRGB::Black);
+  fx.setPixel((uint16_t)0, CRGB::Blue);
+  fx.setPixel((uint16_t)2, CRGB::Blue);
+  fx.setPixel((uint16_t)4, CRGB::Blue);
+  fx.setPixel((uint16_t)6, CRGB::Blue);
+  fx.setPixel((uint16_t)8, CRGB::Blue);
+  fx.setPixel((uint16_t)10, CRGB::Blue);
+  fx.setPixel((uint16_t)12, CRGB::Blue);
+  fx.setPixel((uint16_t)14, CRGB::Blue);
+  fx.setPixel((uint16_t)16, CRGB::Blue);
+  fx.setPixel((uint16_t)18, CRGB::Blue);
+  fx.setPixel((uint16_t)20, CRGB::Blue);
+  fx.setPixel((uint16_t)22, CRGB::Blue);
+  fx.setPixel((uint16_t)1, CRGB::Red);
+  fx.setPixel((uint16_t)3, CRGB::Red);
+  fx.setPixel((uint16_t)5, CRGB::Red);
+  fx.setPixel((uint16_t)7, CRGB::Red);
+  fx.setPixel((uint16_t)9, CRGB::Red);
+  fx.setPixel((uint16_t)11, CRGB::Red);
+  fx.setPixel((uint16_t)13, CRGB::Red);
+  fx.setPixel((uint16_t)15, CRGB::Red);
+  fx.setPixel((uint16_t)17, CRGB::Red);
+  fx.setPixel((uint16_t)19, CRGB::Red);
+  fx.setPixel((uint16_t)21, CRGB::Red);
+  fx.setPixel((uint16_t)23, CRGB::Red);
+
+  for(int nps_i0 = 0; nps_i0 < 10; nps_i0++) {
+    fx.show(200);
+    fx.change(CRGB::Blue, CRGB::Green);
+    fx.change(CRGB::Red, CRGB::Magenta);
+    fx.show(200);
+    fx.change(CRGB::Green, CRGB::Blue);
+    fx.change(CRGB::Magenta, CRGB::Red);
+  }
+
+}
 
 void nps_main(void)
 {
-  fx.putString("*** Hallo NeoPixel ***", CRGB::Blue);
-  fx.change(CRGB::Blue, CRGB::Red);
+  nps_scene_wechselblink();
+  nps_scene_alle_pulsieren();
+  nps_scene_lauflicht();
 
   fx.show();
 }
