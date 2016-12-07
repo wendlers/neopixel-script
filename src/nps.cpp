@@ -8,8 +8,7 @@ LedFX fx = LedFX();
 
 void nps_main(void)
 {
-  fx.putString("*** Hallo NeoPixel ***", CRGB::Blue);
-  fx.change(CRGB::Blue, CRGB::Red);
+  fx.putString("*** Hello NeoPixel ***", CRGB::Blue);
 
   fx.show();
 }

@@ -29,12 +29,18 @@ void LedFX::setPixel(uint16_t ledId, CRGB::HTMLColorCode color)
 void LedFX::setPixel(uint8_t row, uint8_t col, CRGB::HTMLColorCode color)
 {
   if(row < rows && col < cols) {
+
+#ifdef NP_ORDER_SWAP
     if(row % 2) {
       leds[rows * row + col] = color;
     }
     else {
       leds[rows * row + (cols - col - 1)] = color;
     }
+#else
+  leds[rows * row + col] = color;
+#endif
+
   }
 }
 
