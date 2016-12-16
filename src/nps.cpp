@@ -16,7 +16,7 @@ void nps_scene_lauflicht(void) {
 
   for(int nps_i0 = 0; nps_i0 < 10; nps_i0++) {
 
-    for(int nps_i = 0; nps_i < 37; nps_i++) {
+    for(int nps_i = 0; nps_i < 43; nps_i++) {
       fx.setPixel((uint16_t)nps_i, CRGB::Red);
       fx.show(100);
       fx.setPixel((uint16_t)nps_i, CRGB::Black);
@@ -73,6 +73,9 @@ void nps_scene_wechselblink(void) {
   fx.setPixel((uint16_t)32, CRGB::Blue);
   fx.setPixel((uint16_t)34, CRGB::Blue);
   fx.setPixel((uint16_t)36, CRGB::Blue);
+  fx.setPixel((uint16_t)38, CRGB::Blue);
+  fx.setPixel((uint16_t)40, CRGB::Blue);
+  fx.setPixel((uint16_t)42, CRGB::Blue);
   fx.setPixel((uint16_t)1, CRGB::Red);
   fx.setPixel((uint16_t)3, CRGB::Red);
   fx.setPixel((uint16_t)5, CRGB::Red);
@@ -91,6 +94,9 @@ void nps_scene_wechselblink(void) {
   fx.setPixel((uint16_t)31, CRGB::Red);
   fx.setPixel((uint16_t)33, CRGB::Red);
   fx.setPixel((uint16_t)35, CRGB::Red);
+  fx.setPixel((uint16_t)37, CRGB::Red);
+  fx.setPixel((uint16_t)39, CRGB::Red);
+  fx.setPixel((uint16_t)41, CRGB::Red);
 
   for(int nps_i0 = 0; nps_i0 < 10; nps_i0++) {
     fx.show(200);

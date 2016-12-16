@@ -32,7 +32,7 @@ szene lauflicht
   pixel alle in schwarz
 
   wiederhole 10 mal
-    wiederhole 37 mal mit $i
+    wiederhole 43 mal mit $i
       pixel $i in rot
       warte 100 msek
       pixel $i in schwarz
@@ -44,8 +44,8 @@ szene wechselblink
   helligkeit 50
   pixel alle in schwarz
 
-  pixel 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36 in blau
-  pixel 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35 in rot
+  pixel 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42 in blau
+  pixel 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41 in rot
 
   wiederhole 10 mal
     warte 200 msek
