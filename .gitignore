@@ -27,6 +27,7 @@
 *.app
 # Misc
 src/font_hl2.h
+src/nps.cpp
 *.pyc
 .piolibdeps
 .travis.yml
