@@ -20,7 +20,13 @@ void nps_main(void)
   fx.setPixel((uint16_t)3, CRGB::Red);
   fx.setPixel((uint16_t)2, CRGB::Black);
   fx.show(250);
+  fx.setPixel((uint16_t)4, CRGB::Red);
   fx.setPixel((uint16_t)3, CRGB::Black);
+  fx.show(250);
+  fx.setPixel((uint16_t)5, CRGB::Red);
+  fx.setPixel((uint16_t)4, CRGB::Black);
+  fx.show(250);
+  fx.setPixel((uint16_t)5, CRGB::Black);
 
   fx.show();
 }
