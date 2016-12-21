@@ -1,14 +1,14 @@
 helligkeit 150
 
 pixel alle in gruen
-pixel 1, 3, 5, 7, 9 in rot
+pixel 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21 in rot
 warte 1 sek
 
 wechsle gruen nach magenta
 wechsle rot nach blau
 warte 1 sek
 
-wiederhole 11 mal
+wiederhole 22 mal
   schiebe 1 rechts in orange
   warte 150 msek
 ende
