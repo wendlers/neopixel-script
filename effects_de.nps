@@ -1,87 +1,97 @@
-szene pulsiere
-  blenden 0..100
-  warte 150 msek
-  blenden 100..0
+helligkeit 100
+
+szene red
+	pixel alle rot
+	warte 5 sek
 ende
 
-szene alle_pulsieren
-
-  helligkeit 0
-  pixel alle in schwarz
-
-  wiederhole 1 mal
-    pixel alle in blau
-    spiele pulsiere
-
-    pixel alle in magenta
-    spiele pulsiere
-
-    pixel alle in gruen
-    spiele pulsiere
-
-    pixel alle in rot
-    spiele pulsiere
-
-    pixel alle in zyan
-    spiele pulsiere
-  ende
+szene blink1
+	pixel alle rot
+	warte 250 msek
+	pixel alle blau
+	warte 250 msek
 ende
 
-szene lauflicht
-  helligkeit 50
-  pixel alle in schwarz
+szene blink2
+	pixel 0, 4, 1, 5 rot
+	pixel 2, 6, 3, 7 gruen
+	warte 200 msek
 
-  wiederhole 10 mal
-    wiederhole 50 mal mit $i
-      pixel $i in rot
-      warte 100 msek
-      pixel $i in schwarz
-    ende
-  ende
+	pixel 0, 4, 1, 5 gruen
+	pixel 2, 6, 3, 7 rot
+	warte 200 msek
 ende
 
-szene wechselblink
-  helligkeit 50
-
-  pixel alle in schwarz
-
-  pixel 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48 in blau
-  pixel 1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49 in rot
-
-  wiederhole 50 mal
-    warte 200 msek
-    wechsle blau nach gruen
-    wechsle rot nach magenta
-    warte 200 msek
-    wechsle gruen nach blau
-    wechsle magenta nach rot
-  ende
-
+szene runner
+	pixel alle rot
+	wiederhole 8 mal
+		schiebe 1 rechts gelb
+		warte 100 msek
+		schiebe 1 rechts rot
+		warte 100 msek
+	ende
 ende
 
-szene crash
+szene scanner
+	pixel alle rot
 
-  helligkeit 100
+	pixel 0, 4 weiss
+	warte 200 msek
 
-  wiederhole 10 mal
-    pixel alle in schwarz
+	pixel 0, 4 rot
+	pixel 1, 5 weiss
+	warte 200 msek
 
-    pixel 49 in weiss
+	pixel 1, 5 rot
+	pixel 2, 6 weiss
+	warte 200 msek
 
-    wiederhole 50 mal
-      schiebe 1 links in rot
-      warte 100 msek
-    ende
+	pixel 2, 6 rot
+	pixel 3, 7 weiss
+	warte 200 msek
 
-    pixel 0..24 in zyan
-    pixel 25..49 in gold
-    warte 500 msek
-    pixel alle in schwarz
-  ende
+	pixel 3, 7 rot
+	pixel 2, 6 weiss
+	warte 200 msek
 
+	pixel 2, 6 rot
+	pixel 1, 5 weiss
+	warte 200 msek
 ende
 
-spiele crash
-spiele wechselblink
-spiele alle_pulsieren
-spiele lauflicht
+szene pump
+	helligkeit 0
+
+	pixel alle rot
+	blenden 0..200
+	blenden 100..0
+
+	pixel alle magenta
+	blenden 0..200
+	blenden 100..0
+
+	pixel alle schwarz
+	helligkeit 100
+ende
+
+spiele red
+
+wiederhole 20 mal
+	spiele blink2
+ende
+
+wiederhole 5 mal
+	spiele pump
+ende
+
+wiederhole 20 mal
+	spiele scanner
+ende
+
+wiederhole 20 mal
+	spiele blink1
+ende
+
+wiederhole 20 mal
+	spiele runner
+ende
